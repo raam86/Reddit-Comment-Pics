@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Reddit Comment Pics",
+  "version": "0.1",
+  "icons":{
+    "16":"099349-reddit-logo-square_16.png",
+    "48":"099349-reddit-logo-square.png"
+  },
+    "background": { 
+      "scripts": ["background.js"],
+      "persistent": false
+  }
+ ,
+  "description": "Adds pictures to reddit comments",
+  "permissions": [
+    "tabs", "http://www.reddit.com/*"
+  ],
+  "page_action": {
+    "default_icon": {  
+           "19":"099349-reddit-logo-square_19.png"
+      },
+    "default_title": "Reddit Comment Pics"    
+    },
+
+  "author": "Raam",
+  "content_scripts": [
+       {
+        "matches": ["http://www.reddit.com/*"],
+        "js": ["jquery.js","reddit_images.js"]
+      }
+    ],
+  "incognito": "split"
+}
